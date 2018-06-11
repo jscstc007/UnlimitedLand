@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// 该标签会让物体在切场景时不会销毁
 /// </summary>
-public class Tag_DontDestroy : MonoBehaviour {
+public class Tag_DontDestroyOnLoad : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

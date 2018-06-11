@@ -38,7 +38,7 @@ public class TimerManager : MonoBehaviour {
             if (null == instance)
             {
 
-                GameObject go = new GameObject("TimerManager", typeof(TimerManager), typeof(Tag_DontDestroy));
+                GameObject go = new GameObject("TimerManager", typeof(TimerManager), typeof(Tag_DontDestroyOnLoad));
                 instance = go.GetComponent<TimerManager>();
             }
             return instance;

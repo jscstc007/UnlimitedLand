@@ -18,10 +18,10 @@ public class TagManager : ISingleton<TagManager>{
         switch(type)
         {
             case TagType.DontDestroy:
-                Tag_DontDestroy tag = go.GetComponent<Tag_DontDestroy>();
+                Tag_DontDestroyOnLoad tag = go.GetComponent<Tag_DontDestroyOnLoad>();
                 if (null == tag)
                 {
-                    go.AddComponent<Tag_DontDestroy>();
+                    go.AddComponent<Tag_DontDestroyOnLoad>();
                 }
                 break;
 

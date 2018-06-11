@@ -13,7 +13,7 @@ public class BaseUIManager : MonoBehaviour{
         {
             if (null == instance)
             {
-                GameObject go = new GameObject("BaseUIManager", typeof(BaseUIManager), typeof(Tag_DontDestroy));
+                GameObject go = new GameObject("BaseUIManager", typeof(BaseUIManager), typeof(Tag_DontDestroyOnLoad));
                 instance = go.GetComponent<BaseUIManager>();
             }
             return instance;
@@ -121,11 +121,8 @@ public class BaseUIManager : MonoBehaviour{
     /// <param name="uIType"></param>
     public void CloseUI (UIType uIType)
     {
-        Util.Log("调用了Close:" + uIType);
         if (UIDic.ContainsKey(uIType))
         {
-            Util.Log("调用了Close contains:" + uIType);
-
             BaseUI baseUI = UIDic[uIType];
             Destroy(baseUI.CacheGo);
 
