@@ -41,8 +41,11 @@ public class GameUI : BaseUI {
     public override void OnStart()
     {
         base.OnStart();
+        //注册UI事件
+        RegistUI();
         //默认初始化为战斗界面
         ShowUI(GameUIType.Fight);
+
     }
 
     public override void SetUI(params object[] objs)
