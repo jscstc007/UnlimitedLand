@@ -91,7 +91,8 @@ public class GameUI : BaseUI {
                 break;
             case GameUIType.Team:
                 teamP.gameObject.SetActive(true);
-                //TODO
+
+                InitMemberUI();
                 break;
             case GameUIType.Factory:
                 factoryP.gameObject.SetActive(true);
@@ -126,4 +127,51 @@ public class GameUI : BaseUI {
                 break;
         }
     }
+
+    #region 战斗模块
+    //TODO
+    #endregion
+
+    #region 队伍模块
+    
+    /// <summary>
+    /// 初始化队伍UI
+    /// </summary>
+    public void InitMemberUI ()
+    {
+        //更新所选角色列表信息(目前仅考虑主角)
+        Image headI = teamP.Find("Member_P/Item/Head_I").GetComponent<Image>();
+        Text nameT = teamP.Find("Member_P/Item/Name_T").GetComponent<Text>();
+        Text levelT = teamP.Find("Member_P/Item/Level_T").GetComponent<Text>();
+        Text professionT = teamP.Find("Member_P/Item/Profession_T").GetComponent<Text>();
+        Text hpT = teamP.Find("Member_P/Item/HP_T").GetComponent<Text>();
+        Text strT = teamP.Find("Member_P/Item/Str_T").GetComponent<Text>();
+        Text agiT = teamP.Find("Member_P/Item/Agi_T").GetComponent<Text>();
+        Text intT = teamP.Find("Member_P/Item/Int_T").GetComponent<Text>();
+        Text speedT = teamP.Find("Member_P/Item/Speed_T").GetComponent<Text>();
+        Text infoT = teamP.Find("Member_P/Item/Info_T").GetComponent<Text>();
+
+        BaseRoleData data = RoleDataInfo.Instance.GetRoleData(RoleDataInfo.MainRoleId);
+
+        headI.sprite = ResourceManager.LoadRoleHeadSprite(data.Head);
+        nameT.text = data.RoleName;
+        levelT.text = string.Format("Lv{0}", data.Level);
+        professionT.text = RoleDataInfo.GetProfessionName(data.Profession);
+        hpT.text = string.Format("生命:{0}",data.MaxHP);
+        strT.text = string.Format("力量:{0}", data.Str);
+        agiT.text = string.Format("敏捷:{0}", data.Agi);
+        intT.text = string.Format("智力:{0}", data.Intelligence);
+        speedT.text = string.Format("速度:{0}", data.Speed);
+        infoT.text = data.Info;
+    }
+
+    #endregion
+
+    #region 工坊模块
+    //TODO
+    #endregion
+
+    #region 设置模块
+    //TODO
+    #endregion
 }

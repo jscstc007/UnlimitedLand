@@ -1,0 +1,18 @@
+﻿{
+  "10101": {
+    "name": "瑞林",
+    "head": "10101",
+    "profession": 201,
+    "str": 15,
+    "strAdd": 1,
+    "agi": 15,
+    "agiAdd": 2,
+    "int": 15,
+    "intAdd": 1,
+    "speed": 20,
+    "speedAdd": 2,
+    "maxHP": 150,
+    "maxHPAdd": 10,
+    "info":"一名新手宝藏猎人"
+  }
+}
