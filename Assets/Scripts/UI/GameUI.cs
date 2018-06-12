@@ -35,6 +35,9 @@ public class GameUI : BaseUI {
         factoryP = CacheTransform.Find("Main_P/Factory_P");
         settingP = CacheTransform.Find("Main_P/Setting_P");
 
+        areaSelectP = fightP.Find("AreaSelect_P");
+        fightSceneP = fightP.Find("Fight_P");
+
         UIManager.SetUITrans(CacheRectTransform);
     }
 
@@ -129,7 +132,27 @@ public class GameUI : BaseUI {
     }
 
     #region 战斗模块
-    //TODO
+
+    private Transform areaSelectP;
+    private Transform fightSceneP;
+
+    /// <summary>
+    /// 显示区域选择场景
+    /// </summary>
+    private void ShowAreaSelectP ()
+    {
+        areaSelectP.gameObject.SetActive(true);
+        fightSceneP.gameObject.SetActive(false);
+    }
+    /// <summary>
+    /// 显示战斗场景
+    /// </summary>
+    private void ShowFightSceneP ()
+    {
+        areaSelectP.gameObject.SetActive(false);
+        fightSceneP.gameObject.SetActive(true);
+    }
+
     #endregion
 
     #region 队伍模块

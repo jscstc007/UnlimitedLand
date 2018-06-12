@@ -29,6 +29,9 @@ public class GameController : MonoBehaviour {
     void Start () {
         //添加不销毁tag
         TagManager.Instance.AddTag(gameObject, TagType.DontDestroy);
+        //设置一些系统数据
+        SettingManager.SetNeverSleep();
+        SettingManager.SetFPS(FPSType.FPS_30);
         //加载Init模块 Init完成后加载Game模块
         LoadModule(ModuleType.InitModule);
     }
